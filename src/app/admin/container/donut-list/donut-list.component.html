@@ -1,0 +1,13 @@
+<div>
+    <h1>
+        donuts list
+    </h1>
+    <hr>
+    <!-- <ng-container *ngIf="donuts.length; then cards; else noting" /> -->
+    <ng-template [ngIf]="donuts.length">
+        <div class="list-container">
+           
+            <app-donut-cart *ngFor="let donut of donuts" [donut]="donut" />
+        </div>
+    </ng-template>
+</div> 

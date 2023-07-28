@@ -1,0 +1,45 @@
+.donut-img{
+    width: 200px;
+    height: auto;
+    margin-bottom: 20px;
+}
+.donut-card{
+    margin: 20px;
+    border: 1px solid brown;
+    padding: 15px;
+    border-radius: 20px;
+    width: fit-content;
+}
+.container-list{
+    display: flex
+}
+.has-promo{
+    background-color: rgba(233, 253, 233, 0.582);
+    border-radius: 5px;
+    margin: 8px 0;
+    padding: 5px;
+}
+.donut-description{
+    background-color: rgb(247, 247, 247);
+    color: rgb(27, 27, 27);
+    padding: 5px;
+    border-radius: 8px
+}
+.new{
+    color: rgb(230, 109, 129);
+    border: 2px solid rgb(230, 109, 129);
+    border-radius: 5px;
+    padding:3px 5px;
+}
+.limited{
+    color: rgb(240, 158, 7);
+    border: 2px solid rgb(240, 158, 7);;
+    border-radius: 5px;
+    padding:3px 5px;
+}
+.default{
+    color: rgb(135, 7, 240);
+    border: 2px solid rgb(135, 7, 240);;
+    border-radius: 5px;
+    padding:3px 5px;
+}

@@ -1,0 +1,26 @@
+<div class="donut-card">
+    <img src="/assets/img/caramel-swirl.svg"
+    [alt]="donut.name"
+    class="donut-img"
+    >
+    <div [ngStyle]="{
+        border: donut.promo? '1px solid #eee' : ''}">
+        price: {{donut.name}}
+        <ng-container [ngSwitch]="donut.promo" class="new" >
+           <span *ngSwitchCase="'new'" class="new"> NEW</span>
+           <span *ngSwitchCase="'limited'" class="limited">LIMITED</span>
+           <!-- <span *ngSwitchDefault class="default">noting special...</span> -->
+        </ng-container>
+    </div >
+    <div *ngIf="donut.promo">
+        test for ng if 
+    </div>
+    <div [ngClass]="{'has-promo': donut.promo === 'limited' || donut.promo === 'new' }"
+     >
+        {{donut.price | currency : 'USD'}}
+    </div>
+    <div [class.donut-description]="donut.promo === 'new'">
+        {{donut.description}}
+    </div>
+
+</div>

@@ -1,0 +1,130 @@
+<form class="donut-form" #form="ngForm" (ngSubmit)="handleSubmit(form)">
+  <div class="form-item">
+    <div class="title">Name:</div>
+    <input
+      type="text"
+      name="name"
+      required
+      minlength="5"
+      class="input bg-slate-200"
+      ngModel
+      #name="ngModel"
+    />
+    <ng-container *ngIf="name.invalid && name.touched">
+      <p class="text-red-600 text-xs" *ngIf="name?.errors?.['required']">
+        name is required
+      </p>
+      <p class="text-red-600 text-xs" *ngIf="name?.errors?.['minlength']">
+        name shuld be more than 5 character
+      </p>
+    </ng-container>
+  </div>
+  <div class="form-item">
+    <div class="title">Icon:</div>
+    <select
+      class="bg-slate-200"
+      name="icon"
+      required
+      ngModel
+      #icon="ngModel"
+    >
+      <option *ngFor="let icon of icons" [ngValue]="icon | uppercase">
+        {{ icon }}
+      </option>
+    </select>
+    <ng-container *ngIf="icon.invalid && icon.touched">
+      <p class="text-red-600 text-xs" *ngIf="icon?.errors?.['required']">
+        icon is required
+      </p>
+    </ng-container>
+  </div>
+  <div class="form-item">
+    <div class="title">Price:</div>
+    <input
+      type="number"
+      required
+      name="price"
+      class="input bg-slate-200"
+      ngModel
+      #price="ngModel"
+    />
+    <ng-container *ngIf="price.invalid && price.touched">
+      <p class="text-red-600 text-xs" *ngIf="price?.errors?.['required']">
+        price is required
+      </p>
+    </ng-container>
+  </div>
+  <div class="form-item flex my-2">
+    <div class="title">promo:</div>
+    <div class="flex px-2">
+      <input
+        type="radio"
+        required
+        class="bg-slate-200"
+        name="promo"
+        [value]="undefined"
+        ngModel
+      />
+      <p class="ml-0.5">None</p>
+    </div>
+    <div class="flex px-2">
+      <input
+        class="bg-slate-200"
+        type="radio"
+        required
+        name="promo"
+        value="new"
+        ngModel
+      />
+      <p class="ml-0.5">New</p>
+    </div>
+    <div class="flex px-2">
+      <input
+        class="bg-slate-200"
+        type="radio"
+        required
+        name="promo"
+        value="limited"
+        ngModel
+      />
+      <p class="ml-0.5">Limited</p>
+    </div>
+  </div>
+  <div class="form-item">
+    <div class="title">Descroption:</div>
+    <textarea
+      class="bg-slate-200"
+      name="description"
+      required
+      ngModel
+      #descriptin="ngModel"
+    ></textarea>
+    <ng-container *ngIf="descriptin.invalid && descriptin.touched">
+      <p class="text-red-600 text-xs" *ngIf="descriptin?.errors?.['required']">
+        descriptin is required
+      </p>
+    </ng-container>
+  </div>
+  <button
+    type="submit"
+    class="border-none text-emerald-50 mt-5 px-8 rounded-md py-1 bg-green-800"
+  >
+    add
+  </button>
+  <div class="text-sm text-blue-950" *ngIf="form.valid && form.submitted">
+    Working ....
+  </div>
+  <button
+    type="button"
+    class="border-none mx-3 px-8 rounded-md py-1 bg-gray-200"
+    (click)="form.resetForm()"
+  >
+    reset form
+  </button>
+  <pre>
+    {{ form.form.value | json }}
+
+</pre
+  >
+  <!-- [disabled]="form.invalid" -->
+</form>
