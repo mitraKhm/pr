@@ -1,7 +1,8 @@
 
 form .ng-invalid.ng-touched{
     background-color: #ffe7e7;
-    border-color:#e66262;
+    border: 1px solid #e66262;
+    border-radius: 5px;
 }
 .title{
     color: #1c846d;

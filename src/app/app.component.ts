@@ -4,8 +4,8 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-root',
   // templateUrl: './app.component.html',
   template: `
-  <div>
-    <app-donut-single></app-donut-single>
+  <div class="bg-pink-600 h-screen flex justify-center items-center">
+    <app-donut-single />
   </div>
   `,
   styleUrls: ['./app.component.scss']

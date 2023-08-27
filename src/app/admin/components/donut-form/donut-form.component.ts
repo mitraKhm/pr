@@ -19,7 +19,6 @@ export class DonutFormComponent {
   ]
 
   @Output() creat = new EventEmitter<Donut>()
-
   handleSubmit(form: NgForm){
         if(form.valid){
           console.log(form.value)
