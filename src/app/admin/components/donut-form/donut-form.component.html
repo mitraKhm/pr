@@ -6,8 +6,8 @@
       name="name"
       required
       minlength="5"
-      class="input bg-slate-200"
-      ngModel
+      class="input bg-slate-200 "
+      [ngModel]="donut.name"
       #name="ngModel"
     />
     <ng-container *ngIf="name.invalid && name.touched">
@@ -15,7 +15,7 @@
         name is required
       </p>
       <p class="text-red-600 text-xs" *ngIf="name?.errors?.['minlength']">
-        name shuld be more than 5 character
+        name should be more than 5 character
       </p>
     </ng-container>
   </div>
@@ -25,10 +25,11 @@
       class="bg-slate-200"
       name="icon"
       required
-      ngModel
+      [ngModel]="donut.icon"
       #icon="ngModel"
     >
-      <option *ngFor="let icon of icons" [ngValue]="icon | uppercase">
+      <option *ngFor="let icon of icons"
+              [ngValue]="icon | uppercase">
         {{ icon }}
       </option>
     </select>
@@ -45,7 +46,7 @@
       required
       name="price"
       class="input bg-slate-200"
-      ngModel
+      [ngModel]="donut.price"
       #price="ngModel"
     />
     <ng-container *ngIf="price.invalid && price.touched">
@@ -59,11 +60,10 @@
     <div class="flex px-2">
       <input
         type="radio"
-        required
         class="bg-slate-200"
         name="promo"
         [value]="undefined"
-        ngModel
+        [ngModel]="donut.promo"
       />
       <p class="ml-0.5">None</p>
     </div>
@@ -71,10 +71,9 @@
       <input
         class="bg-slate-200"
         type="radio"
-        required
         name="promo"
         value="new"
-        ngModel
+        [ngModel]="donut.promo"
       />
       <p class="ml-0.5">New</p>
     </div>
@@ -82,10 +81,9 @@
       <input
         class="bg-slate-200"
         type="radio"
-        required
         name="promo"
         value="limited"
-        ngModel
+        [ngModel]="donut.promo"
       />
       <p class="ml-0.5">Limited</p>
     </div>
@@ -96,12 +94,12 @@
       class="bg-slate-200"
       name="description"
       required
-      ngModel
-      #descriptin="ngModel"
+      [ngModel]="donut.description"
+      #description="ngModel"
     ></textarea>
-    <ng-container *ngIf="descriptin.invalid && descriptin.touched">
-      <p class="text-red-600 text-xs" *ngIf="descriptin?.errors?.['required']">
-        descriptin is required
+    <ng-container *ngIf="description.invalid && description.touched">
+      <p class="text-red-600 text-xs" *ngIf="description?.errors?.['required']">
+        description is required
       </p>
     </ng-container>
   </div>
@@ -122,6 +120,7 @@
     reset form
   </button>
   <pre>
+    {{ donut | json }}
     {{ form.form.value | json }}
 
 </pre

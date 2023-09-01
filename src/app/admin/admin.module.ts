@@ -5,6 +5,7 @@ import { DonutCartComponent } from './components/donut-cart/donut-cart.component
 import { DonutSingleComponent } from './container/donut-single/donut-single.component';
 import { DonutFormComponent } from './components/donut-form/donut-form.component';
 import { FormsModule } from '@angular/forms';
+import { DonutService } from './services/donut.service';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule, FormsModule
   ] ,
+  providers: [DonutService],
   exports:[DonutListComponent, DonutSingleComponent]
 })
 export class AdminModule {

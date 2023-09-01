@@ -2,7 +2,7 @@
 <div class="flex justify-center">
     <div class="border-2 m-5 rounded-lg p-7 border-pink-300 bg-white">
         <img class="w-28 mx-auto mb-8" src="/assets/img/logo.svg" alt="logo">
-        <app-donut-form (creat)="onCreat($event)" />
+        <app-donut-form  [donut]="donut" (creat)="onCreat($event)" />
     </div>
 </div>
 
